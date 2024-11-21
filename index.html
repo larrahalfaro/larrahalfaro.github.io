@@ -60,6 +60,23 @@
             margin-top: 10px;
         }
 
+       
+        .favorites-card .smiley {
+            font-size: 3em;
+            margin-top: 10px;
+            animation: bounce 1.5s infinite;
+        }
+
+       
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
         .container {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -108,6 +125,7 @@
             background-color: var(--card-bg);
             color: var(--card-text);
         }
+
         .profile-card p {
             text-align: justify;
             font-size: 1.1em;
@@ -131,6 +149,16 @@
             text-align: left; 
         }
 
+    
+        .favorites-card .design-element {
+            margin-top: 20px;
+            width: 80%;
+            height: 5px;
+            background-color: #2980b9;
+            border-radius: 50px;
+            margin-left: auto;
+            margin-right: auto;
+        }
 
         .button {
             background-color: var(--button-bg);
@@ -208,108 +236,108 @@
         <a href="https://mail.google.com/mail/u/0/?tab=rm&ogbl#inbox" class="button">Contact Me</a>
     </div>
     <div class="favorites-card">
+        <div class="smiley">😊</div>
         <h3>Favorites</h3>
         <ul>
             <li>Sleeping</li>
             <li>Playing Online Games</li>
             <li>Listening to music</li>
             <li>Spending time with loved ones</li>
-            <li>Learning to Play a Musical Instrument</li>
             <li>Attending Feast SM Lanang Every Saturday</li>
+            <li>Learning to Play a Musical Instrument</li>
         </ul>
+        
+      
+        <div class="design-element"></div>
     </div>
     <div class="projects-card">
-                <h3>Projects</h3>
-                <table>
-                    <tr>
-                        <th>Project Name</th>
-                        <th>Description</th>
-                        <th>Technologies</th>
-                    </tr>
+        <h3>Projects</h3>
+        <table>
+            <tr>
+                <th>Project Name</th>
+                <th>Description</th>
+                <th>Technologies</th>
+            </tr>
             <tr>
                 <td>Portfolio Website</td>
                 <td>A personal portfolio website to showcase my skills and projects.</td>
                 <td>HTML, CSS, JavaScript</td>
             </tr>
             <tr>
-                <tr>
-                    <td>Responsive Web Design</td>
-                    <td>A project that demonstrates how to create a fully responsive web layout using media queries, adapting to various screen sizes.</td>
-                    <td>HTML, CSS, Media Queries</td>
-                </tr>
-                <tr>
-                    <td>Interactive To-Do List App</td>
-                    <td>An interactive to-do list that fetches and stores tasks dynamically through API calls, allowing users to manage tasks in real-time.</td>
-                    <td>JavaScript, HTML, CSS, API</td>
-                </tr>
+                <td>Responsive Web Design</td>
+                <td>A project that demonstrates how to create a fully responsive web layout using media queries, adapting to various screen sizes.</td>
+                <td>HTML, CSS, Media Queries</td>
+            </tr>
+            <tr>
+                <td>Interactive To-Do List App</td>
+                <td>An interactive to-do list that fetches and stores tasks dynamically through API calls, allowing users to manage tasks in real-time.</td>
+                <td>JavaScript, API</td>
             </tr>
         </table>
     </div>
 </div>
 
 
-
 <div class="todo-list">
-    <h3>Say Something</h3>
-    <input type="text" id="message-input" placeholder="Type your message here">
-    <button onclick="saySomething()">Submit</button>
-    <p id="output-message" style="margin-top: 20px; font-size: 1.2em; color: #2c3e50;"></p>
+<h3>Say Something</h3>
+<input type="text" id="message-input" placeholder="Type your message here">
+<button onclick="saySomething()">Submit</button>
+<p id="output-message" style="margin-top: 20px; font-size: 1.2em; color: #2c3e50;"></p>
 </div>
 
 <div class="contact">
-    <p>Feel free to reach out to me at <a href="https://mail.google.com/mail/u/0/?tab=rm&ogbl#inbox">Gmail</a>.</p>
-    <p>Connect with me on <a href="https://www.facebook.com/laralfaro.19" target="_blank">Facebook</a> | Check out my <a href="https://github.com/larrahalfaro/larrahalfaro.github.io" target="_blank">GitHub</a></p>
+<p>Feel free to reach out to me at <a href="https://mail.google.com/mail/u/0/?tab=rm&ogbl#inbox">Gmail</a>.</p>
+<p>Connect with me on <a href="https://www.facebook.com/laralfaro.19" target="_blank">Facebook</a> | Check out my <a href="https://github.com/larrahalfaro/larrahalfaro.github.io" target="_blank">GitHub</a></p>
 
-    <p><a href="healthy-recipes.html" target="_blank">Link to Healthy-Recipes</a></p>
-    <a href="fashionblog.html" target="_blank">Link to My Fashion Blog</a>
-    <p><a href="woodruff.html" target="_blank">Link to My Woodruff Portfolio</a></p>
+<p><a href="healthy-recipes.html" target="_blank">Link to Healthy-Recipes</a></p>
+<a href="fashionblog.html" target="_blank">Link to My Fashion Blog</a>
+<p><a href="woodruff.html" target="_blank">Link to My Woodruff Portfolio</a></p>
 </div>
 
 <footer>
-    <p>lalfaro_230000003320@uic.edu.ph</p>
+    <p>&copy; 2024 Larrah Shayne Ashley B. Alfaro</p>
 </footer>
 
 <script>
-    function saySomething() {
-        const input = document.getElementById('message-input').value.trim();
-        const output = document.getElementById('output-message');
+function saySomething() {
+const input = document.getElementById('message-input').value.trim();
+const output = document.getElementById('output-message');
 
-        if (input) {
-         
-            fetch('https://jsonplaceholder.typicode.com/posts', {
-                method: 'POST',
-                body: JSON.stringify({
-                    title: input,
-                    body: 'This is a demo message.',
-                    userId: 1
-                }),
-                headers: {
-                    'Content-Type': 'application/json',
-                }
-            })
-                .then(response => response.json())
-                .then(data => {
-                  
-                    output.textContent = `API Response: "${data.title}" successfully sent!`;
-                })
-                .catch(error => {
-                    output.textContent = 'Error: Unable to send your message.';
-                    console.error('Error:', error);
-                });
-        } else {
-            output.textContent = "Please type something!";
-        }
+if (input) {
+
+fetch('https://jsonplaceholder.typicode.com/posts', {
+    method: 'POST',
+    body: JSON.stringify({
+        title: input,
+        body: 'This is a demo message.',
+        userId: 1
+    }),
+    headers: {
+        'Content-Type': 'application/json',
     }
+})
+    .then(response => response.json())
+    .then(data => {
+      
+        output.textContent = `API Response: "${data.title}" successfully sent!`;
+    })
+    .catch(error => {
+        output.textContent = 'Error: Unable to send your message.';
+        console.error('Error:', error);
+    });
+} else {
+output.textContent = "Please type something!";
+}
+}
 
-    function toggleTheme() {
-        const currentTheme = document.body.getAttribute("data-theme");
-        const newTheme = currentTheme === "dark" ? "light" : "dark";
-        document.body.setAttribute("data-theme", newTheme);
-    }
+function toggleTheme() {
+const currentTheme = document.body.getAttribute("data-theme");
+const newTheme = currentTheme === "dark" ? "light" : "dark";
+document.body.setAttribute("data-theme", newTheme);
+}
 
-    
-    document.body.setAttribute("data-theme", "light");
+
+document.body.setAttribute("data-theme", "light");
 </script>
-
 </body>
 </html>
