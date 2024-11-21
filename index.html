@@ -265,6 +265,7 @@
 }
 
 
+
         .button {
             background-color: var(--button-bg);
             color: var(--button-text);
@@ -451,36 +452,36 @@
 <script>
 
 function saySomething() {
-    const input = document.getElementById('message-input').value.trim();
-    const output = document.getElementById('output-message');
+        const input = document.getElementById('message-input').value.trim();
+        const output = document.getElementById('output-message');
 
-    if (input) {
-        fetch('https://jsonplaceholder.typicode.com/posts', {
-            method: 'POST',
-            body: JSON.stringify({
-                title: input,
-                body: 'This is a demo message.',
-                userId: 1
-            }),
-            headers: {
-                'Content-Type': 'application/json',
-            }
-        })
-        .then(response => response.json())
-        .then(data => {
-            output.textContent = `"${data.title}" successfully sent!`;
-        })
-        .catch(error => {
-            output.textContent = 'Error: Unable to send your message.';
-            console.error('Error:', error);
-        });
-    } else {
-        output.textContent = "Please type something!";
+        if (input) {
+            fetch('https://jsonplaceholder.typicode.com/posts', {
+                method: 'POST',
+                body: JSON.stringify({
+                    title: input,
+                    body: 'This is a demo message.',
+                    userId: 1
+                }),
+                headers: {
+                    'Content-Type': 'application/json',
+                }
+            })
+            .then(response => response.json())
+            .then(data => {
+                output.textContent = `"${data.title}" successfully sent!`;
+            })
+            .catch(error => {
+                output.textContent = 'Error: Unable to send your message.';
+                console.error('Error:', error);
+            });
+        } else {
+            output.textContent = "Please type something!";
+        }
     }
-}
 
-
-function toggleTheme() {
+    
+    function toggleTheme() {
         const currentTheme = document.body.getAttribute("data-theme");
         const newTheme = currentTheme === "dark" ? "light" : "dark";
         document.body.setAttribute("data-theme", newTheme);
@@ -493,10 +494,17 @@ function toggleTheme() {
         }
     }
 
-    document.body.setAttribute("data-theme", "light");
+    window.onload = function() {
+        const currentTheme = document.body.getAttribute("data-theme");
+        if (!currentTheme) {
+           
+            document.body.setAttribute("data-theme", "light");
+        }
+        const button = document.querySelector(".toggle-theme");
+        button.textContent = currentTheme === "dark" ? "Light Mode" : "Dark Mode";
+    };
 
-
-window.addEventListener("scroll", () => {
+    window.addEventListener("scroll", () => {
         const backToTop = document.querySelector(".back-to-top");
         if (window.scrollY > 300) {
             backToTop.style.display = "block";
@@ -504,6 +512,7 @@ window.addEventListener("scroll", () => {
             backToTop.style.display = "none";
         }
     });
+
 </script>
 </body>
 </html>
