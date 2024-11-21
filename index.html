@@ -108,21 +108,27 @@
             background-color: var(--card-bg);
             color: var(--card-text);
         }
+        .profile-card p {
+            text-align: justify;
+            font-size: 1.1em;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
 
         .profile-card h2,
         .favorites-card h3,
         .projects-card h3 {
-           font-size: 1.8em;
-           margin-bottom: 20px;
-           color: #2980b9; 
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            color: #2980b9; 
         }
 
         .favorites-card ul {
-           list-style-type: disc; 
-           padding-left: 20px; 
-           font-size: 1.1em;
-           color: #7f8c8d;
-           text-align: left; 
+            list-style-type: disc; 
+            padding-left: 20px; 
+            font-size: 1.1em;
+            color: #7f8c8d;
+            text-align: left; 
         }
 
 
@@ -195,7 +201,10 @@
     <div class="profile-card">
         <img src="larrah.png" alt="Larrah Alfaro" class="image-holder">
         <h2>About Me</h2>
-        <p>I am a 20-year-old student currently pursuing a degree in Bachelor of Science in Information Technology (BSIT)...</p>
+        <p>I am a 20-year-old student currently pursuing a degree in Bachelor of Science in Information Technology (BSIT) at the University of the Immaculate Conception. 
+            Born on August 19, 2004, I am the second-born in my family. I live in Davao City and can understand Kapampangan. I am a jolly and approachable person who enjoys spending time with family and friends.
+            I love to play online games and watch movies/series in my free time.</p>
+
         <a href="https://mail.google.com/mail/u/0/?tab=rm&ogbl#inbox" class="button">Contact Me</a>
     </div>
     <div class="favorites-card">
@@ -289,7 +298,7 @@
             output.textContent = "Please type something!";
         }
     }
-    
+
     function toggleTheme() {
         const currentTheme = document.body.getAttribute("data-theme");
         const newTheme = currentTheme === "dark" ? "light" : "dark";
