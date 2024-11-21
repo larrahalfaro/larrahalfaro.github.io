@@ -28,6 +28,7 @@
             --button-text: #444;
         }
 
+
         body {
             font-family: 'Roboto', sans-serif;
             margin: 0;
@@ -59,6 +60,51 @@
             font-size: 1.2em;
             margin-top: 10px;
         }
+
+        .toggle-theme {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            padding: 10px 20px;
+            background-color: var(--button-bg);
+            color: var(--button-text);
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .toggle-theme[data-theme="dark"] {
+            background-color: #fff;
+            color: #2c3e50;
+        }
+
+        .button {
+            background-color: var(--button-bg);
+            color: var(--button-text);
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 1.1em;
+            margin-top: 20px;
+            display: inline-block;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .button:hover {
+            background-color: #3498db;
+        }
+
+        footer {
+            background-color: var(--header-bg);
+            color: var(--header-text);
+            text-align: center;
+            padding: 20px;
+            width: 100%;
+            margin-top: 50px;
+        }
+
 
        
         .favorites-card .smiley {
@@ -388,7 +434,7 @@
 </footer>
 
 <script>
-    
+
 function saySomething() {
     const input = document.getElementById('message-input').value.trim();
     const output = document.getElementById('output-message');
@@ -420,14 +466,21 @@ function saySomething() {
 
 
 function toggleTheme() {
-const currentTheme = document.body.getAttribute("data-theme");
-const newTheme = currentTheme === "dark" ? "light" : "dark";
-document.body.setAttribute("data-theme", newTheme);
+        const currentTheme = document.body.getAttribute("data-theme");
+        const newTheme = currentTheme === "dark" ? "light" : "dark";
+        document.body.setAttribute("data-theme", newTheme);
 
-}
+        const button = document.querySelector(".toggle-theme");
+        if (newTheme === "dark") {
+            button.textContent = "Light Mode";
+        } else {
+            button.textContent = "Dark Mode";
+        }
+    }
 
-document.body.setAttribute("data-theme", "light");
+    document.body.setAttribute("data-theme", "light");
 
+    
 window.addEventListener("scroll", () => {
         const backToTop = document.querySelector(".back-to-top");
         if (window.scrollY > 300) {
