@@ -214,6 +214,49 @@
             font-size: 1em;
             transition: background-color 0.3s, color 0.3s;
         }
+         input#message-input {
+            width: 80%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid var(--card-text);
+            border-radius: 5px;
+            font-size: 1em;
+        }
+
+        #char-counter {
+            font-size: 0.9em;
+            color: var(--text-color);
+            margin-top: 5px;
+        }
+
+        button:hover {
+            animation: shake 0.2s linear 2;
+        }
+
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            25%, 75% { transform: translateX(-5px); }
+            50% { transform: translateX(5px); }
+        }
+
+
+        .back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            padding: 10px 15px;
+            background-color: var(--button-bg);
+            color: var(--button-text);
+            border-radius: 50%;
+            display: none;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s;
+        }
+
+        .back-to-top:hover {
+            background-color: #3498db;
+        }
     </style>
 </head>
 <body>
@@ -293,6 +336,8 @@
 <p><a href="woodruff.html" target="_blank">Link to My Woodruff Portfolio</a></p>
 </div>
 
+<a href="#top" class="back-to-top">Back to Top</a>
+
 <footer>
     <p>&copy; 2024 Larrah Shayne Ashley B. Alfaro</p>
 </footer>
@@ -337,6 +382,15 @@ document.body.setAttribute("data-theme", newTheme);
 }
 
 document.body.setAttribute("data-theme", "light");
+
+window.addEventListener("scroll", () => {
+        const backToTop = document.querySelector(".back-to-top");
+        if (window.scrollY > 300) {
+            backToTop.style.display = "block";
+        } else {
+            backToTop.style.display = "none";
+        }
+    });
 </script>
 </body>
 </html>
