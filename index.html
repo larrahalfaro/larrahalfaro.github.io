@@ -61,6 +61,10 @@
             margin-top: 10px;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         .toggle-theme {
             position: fixed;
             top: 20px;
@@ -78,6 +82,16 @@
         .toggle-theme[data-theme="dark"] {
             background-color: #fff;
             color: #2c3e50;
+        }
+
+        input#message-input {
+            width: 80%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid var(--card-text);
+            border-radius: 5px;
+            font-size: 1em;
+            background-color: var(--card-bg);
         }
 
         .button {
@@ -427,7 +441,8 @@
 <p><a href="woodruff.html" target="_blank">Link to My Woodruff Portfolio</a></p>
 </div>
 
-<a href="#top" class="back-to-top">Back to Top</a>
+<a href="#" class="back-to-top">Back to Top</a>
+
 
 <footer>
     <p>&copy; 2024 Larrah Shayne Ashley B. Alfaro</p>
@@ -480,7 +495,7 @@ function toggleTheme() {
 
     document.body.setAttribute("data-theme", "light");
 
-    
+
 window.addEventListener("scroll", () => {
         const backToTop = document.querySelector(".back-to-top");
         if (window.scrollY > 300) {
