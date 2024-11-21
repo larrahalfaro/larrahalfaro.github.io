@@ -160,6 +160,51 @@
             margin-right: auto;
         }
 
+@media (max-width: 1024px) {
+    .container {
+        grid-template-columns: repeat(2, 1fr); 
+        gap: 20px;
+    }
+
+    .todo-list {
+        width: 80%; 
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        grid-template-columns: 1fr; 
+    }
+
+    .profile-card img {
+        width: 100%; 
+    }
+
+    header h1 {
+        font-size: 2em;
+    }
+
+    .toggle-theme {
+        font-size: 0.9em; 
+        padding: 5px 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        width: 90%; 
+    }
+
+    header {
+        padding: 20px 0;
+    }
+
+    .favorites-card ul {
+        font-size: 0.9em; 
+    }
+}
+
+
         .button {
             background-color: var(--button-bg);
             color: var(--button-text);
