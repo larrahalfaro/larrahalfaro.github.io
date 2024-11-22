@@ -45,17 +45,10 @@
         header {
             background-color: var(--header-bg);
             color: var(--header-text);
+            text-align: center;
+            padding: 40px 0;
             width: 100%;
-            display: flex;
-            flex-direction: column; 
-            align-items: center; 
-            justify-content: center; 
-            padding: 20px;
-            box-sizing: border-box; 
-            text-align: center; 
-
         }
-        
 
         header h1 {
             font-size: 3em;
@@ -228,72 +221,67 @@
         }
 
        
-header h1 {
-    font-size: 2.5em;
-}
-header p {
-    font-size: 1.2em; 
-}
-.toggle-theme {
-    font-size: 1em; 
-    padding: 10px 20px; 
-}
-
-
 @media (max-width: 1024px) {
-    header {
-        padding: 15px;
+    .container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+        padding: 10px;
+    }
+    .profile-card, .favorites-card, .projects-card {
+        padding: 20px;
+        border-radius: 8px; 
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+    .profile-card img {
+        max-width: 100%; 
+        border-radius: 10px;
     }
     header h1 {
-        font-size: 2em; 
-    }
-    header p {
-        font-size: 1em;
+        font-size: 1.8em;
+        text-align: center;
     }
     .toggle-theme {
         font-size: 0.9em;
-        padding: 8px 16px; 
+        padding: 5px 10px;
+        transition: all 0.3s ease; 
     }
 }
 
-
-@media (max-width: 768px) {
+@media (max-width: 480px) {
+    .container {
+        width: 100%;
+        margin: 0 auto;
+        padding: 0 10px; 
+    }
     header {
-        padding: 12px;
+        padding: 15px 0;
+        text-align: center;
     }
-    header h1 {
-        font-size: 1.8em; 
+    .favorites-card ul {
+        font-size: 0.9em;
+        line-height: 1.4;
+        padding: 0;
     }
-    header p {
-        font-size: 0.9em; 
+    .profile-card, .favorites-card, .projects-card {
+        padding: 10px;
+        margin-bottom: 15px;
     }
     .toggle-theme {
         font-size: 0.8em;
-        padding: 6px 12px;
+        padding: 5px;
     }
-}
-
-
-@media (max-width: 480px) {
-    header {
-        padding: 10px;
-    }
-    header h1 {
-        font-size: 1.5em;
-    }
-    header p {
-        font-size: 0.8em; 
-    }
-    .toggle-theme {
-        font-size: 0.7em;
-        padding: 5px 10px;
-    }
-}
     footer {
-        font-size: 0.7em;
+        text-align: center; 
+        font-size: 0.8em;
     }
-
-
+}
 
 
 
@@ -320,7 +308,6 @@ header p {
             padding: 20px;
             width: 100%;
             margin-top: 50px;
-            font-size: 1.2em;
         }
 
         .todo-list {
@@ -386,11 +373,10 @@ header p {
             background-color: var(--button-bg);
             color: var(--button-text);
             border-radius: 50%;
+            display: none;
             cursor: pointer;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
             transition: all 0.3s;
-          
-            
         }
 
         .back-to-top:hover {
@@ -478,7 +464,6 @@ header p {
 <a href="#" class="back-to-top">Back to Top</a>
 
 
-
 <footer>
     <p>&copy; 2024 Larrah Shayne Ashley B. Alfaro</p>
 </footer>
@@ -540,7 +525,11 @@ function saySomething() {
 
     window.addEventListener("scroll", () => {
         const backToTop = document.querySelector(".back-to-top");
-        
+        if (window.scrollY > 300) {
+            backToTop.style.display = "block";
+        } else {
+            backToTop.style.display = "none";
+        }
     });
 
 </script>
