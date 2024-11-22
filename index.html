@@ -223,14 +223,15 @@
        
 @media (max-width: 1024px) {
     .container {
-        display: grid;
         grid-template-columns: repeat(2, 1fr);
         gap: 20px;
         padding: 10px;
+        width: 100%;
     }
     .profile-card, .favorites-card, .projects-card {
-        padding: 20px;
+        padding: 15px;
         border-radius: 8px; 
+        text-align: center;
     }
 }
 
@@ -238,19 +239,26 @@
     .container {
         grid-template-columns: 1fr;
         gap: 15px;
+        padding: 0 10px;
     }
     .profile-card img {
         max-width: 100%; 
+        height: auto;
         border-radius: 10px;
     }
     header h1 {
         font-size: 1.8em;
-        text-align: center;
+    }
+    header p {
+        font-size: 1em;
     }
     .toggle-theme {
         font-size: 0.9em;
-        padding: 5px 10px;
-        transition: all 0.3s ease; 
+        padding: 5px 10px; 
+    }
+    .projects-card table {
+        font-size: 0.9em;
+        word-wrap: break-word;
     }
 }
 
@@ -258,30 +266,51 @@
     .container {
         width: 100%;
         margin: 0 auto;
-        padding: 0 10px; 
     }
     header {
         padding: 15px 0;
-        text-align: center;
     }
-    .favorites-card ul {
+    header h1 {
+        font-size: 1.5em;
+    }
+    header p {
         font-size: 0.9em;
-        line-height: 1.4;
-        padding: 0;
     }
     .profile-card, .favorites-card, .projects-card {
         padding: 10px;
-        margin-bottom: 15px;
+    }
+    .favorites-card ul {
+        font-size: 0.8em;
+    }
+    .projects-card table {
+        font-size: 0.8em;
     }
     .toggle-theme {
         font-size: 0.8em;
-        padding: 5px;
     }
     footer {
-        text-align: center; 
         font-size: 0.8em;
     }
 }
+
+@media (max-width: 320px) {
+    body {
+        font-size: 0.8em;
+    }
+    header h1 {
+        font-size: 1.2em;
+    }
+    .favorites-card ul {
+        font-size: 0.7em;
+    }
+    .projects-card table {
+        font-size: 0.7em;
+    }
+    footer {
+        font-size: 0.7em;
+    }
+}
+
 
 
 
@@ -462,6 +491,7 @@
 </div>
 
 <a href="#" class="back-to-top">Back to Top</a>
+display: none;
 
 
 <footer>
