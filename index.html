@@ -2,10 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1,user-scalable=no">
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
     <title>Larrah's Portfolio</title>
-    
     <style>
         :root {
             --bg-color: #f4f7fc;
@@ -29,7 +27,6 @@
             --button-text: #444;
         }
 
-
         body, html {
             font-family: 'Roboto', sans-serif;
             margin: 0;
@@ -42,14 +39,13 @@
             align-items: center;
             transition: background-color 0.3s, color 0.3s;
             box-sizing: border-box;
-           
         }
 
         header {
             background-color: var(--header-bg);
             color: var(--header-text);
             text-align: center;
-            padding: 20px 10;
+            padding: 20px 10px;
             width: 100%;
             box-sizing: border-box;
             position: relative;
@@ -124,15 +120,12 @@
             margin-top: 50px;
         }
 
-
-       
         .favorites-card .smiley {
             font-size: 3em;
             margin-top: 10px;
             animation: bounce 1.5s infinite;
         }
 
-       
         @keyframes bounce {
             0%, 100% {
                 transform: translateY(0);
@@ -214,7 +207,6 @@
             text-align: left; 
         }
 
-    
         .favorites-card .design-element {
             margin-top: 20px;
             width: 80%;
@@ -225,111 +217,92 @@
             margin-right: auto;
         }
 
-       
-@media (max-width: 1024px) {
-    .container {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 20px;
-        padding: 10px;
-        width: 100%;
-        justify-content: flex-start;
-    }
-    .profile-card, .favorites-card, .projects-card {
-        padding: 15px;
-        border-radius: 8px; 
-        text-align: center;
-    }
-}
+        @media (max-width: 1024px) {
+            .container {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
+                padding: 10px;
+                width: 100%;
+                justify-content: flex-start;
+            }
+            .profile-card, .favorites-card, .projects-card {
+                padding: 15px;
+                border-radius: 8px; 
+                text-align: center;
+            }
+        }
 
-img{
-    max-height: 100%;
-    max-width: 100;
-    object-fit: cover;
-}
+        @media (max-width: 768px) {
+            .container {
+                grid-template-columns: 1fr;
+                gap: 15px;
+                padding: 0 10px;
+                justify-content: flex-start;
+            }
+            .profile-card img {
+                max-width: 100%; 
+                height: auto;
+                border-radius: 10px;
+            }
+            header h1 {
+                font-size: 1.8em;
+            }
+            header p {
+                font-size: 1em;
+            }
+            .toggle-theme {
+                font-size: 0.9em;
+                padding: 5px 10px; 
+            }
+            .projects-card table {
+                font-size: 0.9em;
+                word-wrap: break-word;
+            }
+        }
 
-@media (max-width: 768px) {
-    .container {
-        grid-template-columns: 1fr;
-        gap: 15px;
-        padding: 0 10px;
-        justify-content: flex-start;
-    }
-    .profile-card img {
-        max-width: 100%; 
-        height: auto;
-        border-radius: 10px;
-    }
-    header h1 {
-        font-size: 1.8em;
-    }
-    header p {
-        font-size: 1em;
-    }
-    .toggle-theme {
-        font-size: 0.9em;
-        padding: 5px 10px; 
-    }
-    .projects-card table {
-        font-size: 0.9em;
-        word-wrap: break-word;
-    }
-}
+        @media (max-width: 480px) {
+            .container {
+                width: 100%;
+                margin: 0 auto;
+                justify-content: flex-start;
+            }
+            header {
+                padding: 15px 0;
+            }
+            header h1 {
+                font-size: 1.5em;
+            }
+            header p {
+                font-size: 0.9em;
+            }
+            .profile-card, .favorites-card, .projects-card {
+                padding: 10px;
+            }
+            .favorites-card ul {
+                font-size: 0.8em;
+            }
+            .projects-card table {
+                font-size: 0.8em;
+            }
+            .toggle-theme {
+                font-size: 0.8em;
+            }
+            footer {
+                font-size: 0.8em;
+            }
+        }
 
-@media (max-width: 480px) {
-    .container {
-        width: 100%;
-        margin: 0 auto;
-        justify-content: flex-start;
-    }
-    header {
-        padding: 15px 0;
-    }
-    header h1 {
-        font-size: 1.5em;
-    }
-    header p {
-        font-size: 0.9em;
-    }
-    .profile-card, .favorites-card, .projects-card {
-        padding: 10px;
-    }
-    .favorites-card ul {
-        font-size: 0.8em;
-    }
-    .projects-card table {
-        font-size: 0.8em;
-    }
-    .toggle-theme {
-        font-size: 0.8em;
-    }
-    footer {
-        font-size: 0.8em;
-    }
-}
-
-@media (max-width: 320px) {
-    .container {
-    justify-content: flex-start;
-}
-    body {
-        font-size: 0.8em;
-    }
-    header h1 {
-        font-size: 1.2em;
-    }
-    .favorites-card ul {
-        font-size: 0.7em;
-    }
-    .projects-card table {
-        font-size: 0.7em;
-    }
-    footer {
-        font-size: 0.7em;
-    }
-}
-
-
-
+        @media (max-width: 320px) {
+            .container {
+                justify-content: flex-start;
+            }
+            body {
+                padding: 10px;
+            }
+            .profile-card, .favorites-card, .projects-card {
+                padding: 10px;
+            }
+        }
 
         .button {
             background-color: var(--button-bg);
@@ -428,6 +401,7 @@ img{
         .back-to-top:hover {
             background-color: #3498db;
         }
+        
     </style>
 </head>
 <body>
