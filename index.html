@@ -227,6 +227,7 @@
         gap: 20px;
         padding: 10px;
         width: 100%;
+        justify-content: flex-start;
     }
     .profile-card, .favorites-card, .projects-card {
         padding: 15px;
@@ -240,6 +241,7 @@
         grid-template-columns: 1fr;
         gap: 15px;
         padding: 0 10px;
+        justify-content: flex-start;
     }
     .profile-card img {
         max-width: 100%; 
@@ -266,6 +268,7 @@
     .container {
         width: 100%;
         margin: 0 auto;
+        justify-content: flex-start;
     }
     header {
         padding: 15px 0;
@@ -294,6 +297,9 @@
 }
 
 @media (max-width: 320px) {
+    .container {
+    justify-content: flex-start;
+}
     body {
         font-size: 0.8em;
     }
